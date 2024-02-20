@@ -180,12 +180,13 @@
                             <br><br><br>
 
                             <h3 class="title is-4">Analysis Outcomes</h3>
+                            <ul>
                                 <li>Our study suggests that vanilla LMs (<20B) (in a zero-shot setting) are systematically unfaithful and consistently fail to reason over the mediator.
                                     In general, our experiments show a large variation in the causal effects of COT in the final answer depending on the tasks. 
                                     Models that are instruction-tuned or trained on the chain of thought during the pre-training phase have a better indirect effect across different reasoning tasks, suggesting that fine-tuning on CoT can make the model more faithful. Interestingly, we observe that there is an inverse scaling for certain tasks. 
                                     In our case, the indirect effect is worsening with increasingly capable models, indicating that smaller models might be more effective in faithful reasoning. 
                                 </li>
-                                
+                            </ul>   
                         </div>
                     </div>
                     <br><br>
@@ -202,32 +203,14 @@
                         <div class="column has-text-justified">
                             <h3 class="title is-4">Components</h3>
                             <ul>
-                                <li><b>Inference Module</b>:
+                                <li><b>Inference Module</b>: The first module tailors small-sized LMs to generate correct reasoning chains (inference module), while the second module takes the reasoning chains as input and faithfully reasons over them to arrive at the correct answer (reasoning module). 
+                                To learn to generate correct reasoning chains, we use the DPO algorithm, which enables the model to prefer correct reasoning chains over counterfactual ones with implicit feedback. Instead of relying on human labelling, we obtain preference data by prompting LLMs to generate correct and counterfactual reasoning chains.    
                                 </li>
                                 <br>
-                                <li><b>Reasoner Module</b>: 
-
+                                <li><b>Reasoner Module</b>: In this module, we train another small-sized LM to improve the causal effect between the reasoning chain and the final answer using a counterfactual and causal preference ranking objective.
                                 </li>
 
                             </ul>
-                            <br><br><br>
-
-                            <h3 class="title is-4">Key Features</h3>
-                            <ul style="list-style-type: square">
-                                <li>
-                                    The FEEDBACK → REFINE → FEEDBACK loop can be applied multiple times.
-                                </li><br>
-                                <li>Self-Refine retains the history of past experiences. This is
-                                    achieved by appending the previous outputs to the prompt continuously. This allows
-                                    the system to learn from
-                                    past mistakes and avoid repeating them
-                                </li><br>
-                                <li>Self-Refine generates actionable feedback. Given the initial output from an LLM, the
-                                    FEEDBACK pinpoints the reasons for the output meeting (or not
-                                    meeting) the requirements. The actionable feedback covers two aspects (i)
-                                    localization of the problem
-                                    (ii) instruction to improve.
-                                </li>
                         </div>
                     </div>
                     <br><br>
