@@ -71,7 +71,7 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">Making Reasoning Matter: 
+                        <h1 class="title is-1 publication-title">Making Reasoning Matter: <br>
                             Measuring and Improving Faithfulness of Chain-of-Thought Reasoning
                         </h1>
                         <div class="is-size-5 publication-authors">
@@ -169,9 +169,8 @@
                         <div class="column has-text-justified">
                             <h3 class="title is-4">Reasoning Chain as Mediator</h3>
                             <ul>
-                                <li>In this work, we view the reasoning process as a causal graph, framing the input (reasoning problem) $X$ and the output $Y$ as random variables and the reasoning steps as mediator variable $R$.  
+                                <li>In this work, we view the reasoning process as a causal graph, framing the input (reasoning problem) X and the output Y as random variables and the reasoning steps as mediator variable R.  
                                 </li>
-                                <br>
                                 <li>We use mediation analysis to interpret the role of reasoning steps as mediators between model inputs and model outputs. Please note that there are two mediator variables, model parameters $M$ and reasoning steps $R$ (see Fig. \ref{fig:causal_graph}(b)). 
                                 However, in this work, we are interested in understanding the indirect effect of R on the output Y; hence, we assume model parameters M to be fixed. </li>
                                 <li>Let X<sub>0</sub> denote the initial reasoning problem, R<sub>0</sub> as the reasoning chain given X<sub>0</sub>, and Y<sub>00</sub> denote the potential outcome if the treatment variable and mediator variable are X<sub>0</sub> and R<sub>0</sub>, respectively. Whereas Y<sub>01</sub> denotes the possible outcome when treatment is set to X<sub>0</sub> and R<sub>1</sub> is the reasoning chain for an intervened reasoning problem (see Fig.\ref{fig:causal_graph}(d)). 
