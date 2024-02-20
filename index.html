@@ -160,7 +160,7 @@
                             <figure class="image">
                                 <img src="static/image/CSM.png">
                             </figure>
-                            <figcaption>Causal graph for natural language reasoning, where we model P(Y| do(x)). X<sub>0</sub> = original reasoning problem, X<sub>1</sub> = intervened reasoning problem, R<sub>0</sub> = reasoning steps for X<sub>0</sub> reasoning problem, R<sub>1</sub> = reasoning steps for X<sub>1</sub>, Y = output, and M = model parameters</figcaption>
+                            <figcaption> Figure 2. Causal graph for natural language reasoning, where we model P(Y| do(x)). X<sub>0</sub> = original reasoning problem, X<sub>1</sub> = intervened reasoning problem, R<sub>0</sub> = reasoning steps for X<sub>0</sub> reasoning problem, R<sub>1</sub> = reasoning steps for X<sub>1</sub>, Y = output, and M = model parameters</figcaption>
                         </div>
                     </div>
                     <br> <br>
@@ -170,10 +170,10 @@
                             <h3 class="title is-4">Reasoning Chain as Mediator</h3>
                             <ul>
                                 <li>In this work, we view the reasoning process as a causal graph, framing the input (reasoning problem) X and the output Y as random variables and the reasoning steps as mediator variable R.  
-                                We use mediation analysis to interpret the role of reasoning steps as mediators between model inputs and model outputs. Please note that there are two mediator variables, model parameters M and reasoning steps R (see above Figure 1(b)). 
+                                We use mediation analysis to interpret the role of reasoning steps as mediators between model inputs and model outputs. Please note that there are two mediator variables, model parameters M and reasoning steps R (see above Figure 2(b)). 
                                 However, in this work, we are interested in understanding the indirect effect of R on the output Y; hence, we assume model parameters M to be fixed. 
                                 Let X<sub>0</sub> denote the initial reasoning problem, R<sub>0</sub> as the reasoning chain given X<sub>0</sub>, and Y<sub>00</sub> denote the potential outcome if the treatment variable and mediator variable are X<sub>0</sub> and R<sub>0</sub>, respectively. 
-                                Whereas Y<sub>01</sub> denotes the possible outcome when treatment is set to X<sub>0</sub> and R<sub>1</sub> is the reasoning chain for an intervened reasoning problem (see Figure 1(d)). 
+                                Whereas Y<sub>01</sub> denotes the possible outcome when treatment is set to X<sub>0</sub> and R<sub>1</sub> is the reasoning chain for an intervened reasoning problem (see Figure 2(d)). 
                                 </li>
 
                             </ul>
@@ -198,20 +198,6 @@
                                     the model may attempt
                                     to enhance positivity by substituting “good” with “amazing”.
 
-                                </li>
-                                <li>
-                                    The FEEDBACK → REFINE → FEEDBACK loop can be applied multiple times.
-                                </li><br>
-                                <li>Self-Refine retains the history of past experiences. This is
-                                    achieved by appending the previous outputs to the prompt continuously. This allows
-                                    the system to learn from
-                                    past mistakes and avoid repeating them
-                                </li><br>
-                                <li>Self-Refine generates actionable feedback. Given the initial output from an LLM, the
-                                    FEEDBACK pinpoints the reasons for the output meeting (or not
-                                    meeting) the requirements. The actionable feedback covers two aspects (i)
-                                    localization of the problem
-                                    (ii) instruction to improve.
                                 </li>
                         </div>
                     </div>
@@ -246,7 +232,7 @@ def self_refine(prompt: str) -> str:
                     </div>
 
                     <figure class="image is-8by6">
-                    <img id="animatedGif" src="https://github.com/debjitpaul/frodo.github.io/static/images/Frodo.pdf">
+                    <img id="animatedGif" src="static/images/Frodo.pdf">
                   </figure>
                 <h2 class="subtitle has-text-centered">
                     <span class="pal">
@@ -338,6 +324,21 @@ def self_refine(prompt: str) -> str:
                     </figure>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>
+@misc{madaan2023selfrefine,
+    title={Self-Refine: Iterative Refinement with Self-Feedback}, 
+    author={Debjit Paul, Robert West, Antoine Bosselut and Boi Faltings}
+    year={2024},
+    eprint={},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+            </code></pre>
         </div>
     </section>
 
