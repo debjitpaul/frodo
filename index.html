@@ -179,58 +179,18 @@
                             </ul>
                             <br><br><br>
 
-                            <h3 class="title is-4">Key Features</h3>
+                            <h3 class="title is-4">Analysis Outcomes</h3>
                             <ul style="list-style-type: square">
-                                <li><b>FEEDBACK</b>: receives the initial output y<sub>0</sub> and provides feedback on
-                                    how to enhance it. This feedback is
-                                    task-dependent and generally addresses multiple aspects of the input. In the above
-                                    example, the feedback
-                                    might concern the sentiment level and vividness of the review. Importantly, the
-                                    feedback is actionable, as the
-                                    feedback module identifies specific areas that can be refined (e.g., “the sentiment
-                                    level is neutral” or “the
-                                    sentiment is neutral due to phrases like good”).
+                                <li>Our study suggests that vanilla LMs (<20B) (in a zero-shot setting) are systematically unfaithful and consistently fail to reason over the mediator.
+                                    In general, our experiments show a large variation in the causal effects of COT in the final answer depending on the tasks. 
+                                    Models that are instruction-tuned or trained on the chain of thought during the pre-training phase have a better indirect effect across different reasoning tasks, suggesting that fine-tuning on CoT can make the model more faithful. Interestingly, we observe that there is an inverse scaling for certain tasks. 
+                                    In our case, the indirect effect is worsening with increasingly capable models, indicating that smaller models might be more effective in faithful reasoning. 
                                 </li>
-                                <br>
-                                <li><b>REFINE</b> is responsible for refining y<sub>t</sub> based on the feedback
-                                    received from the feedback module. In the
-                                    example, informed by the neutral sentiment of the review due to phrases like “good”,
-                                    the model may attempt
-                                    to enhance positivity by substituting “good” with “amazing”.
-
-                                </li>
+                                
                         </div>
                     </div>
                     <br><br>
                     <br>
-                    <div class="box has-background-light">
-                        <h2 class="title is-3">Example</h2>
-                        Adding a new task to Self-Refine is straightforward. The following code snippet shows the basic
-                        structure of the Self-Refine framework. The FEEDBACK and REFINE modules are task-dependent and
-                        can be implemented in a variety of ways. The is_refinement_sufficient function defines the
-                        stopping criteria for the iterative process. The function is_refinement_sufficient is also
-                        task-dependent and can be implemented in a variety of ways.
-                        <pre><code class="language-python">
-def self_refine(prompt: str) -> str:
-    def is_refinement_sufficient(prompt, feedback, initial, refined) -> bool:
-        # Define stopping criteria here
-        pass
-
-    answer = ChatGPT(prompt)
-
-    while True:
-        feedback = ChatGPT(feedback_prompt, answer)
-        refined = ChatGPT(refiner_prompt, feedback, answer)
-
-        if is_refinement_sufficient(prompt, feedback, answer, refined):
-            break
-
-        answer = refined
-
-    return refined
-                        </code></pre>
-                    </div>
-
                     <figure class="image is-8by6">
                     <img id="animatedGif" src="static/images/Frodo.png">
                   </figure>
