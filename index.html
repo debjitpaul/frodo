@@ -180,7 +180,6 @@
                             <br><br><br>
 
                             <h3 class="title is-4">Analysis Outcomes</h3>
-                            <ul style="list-style-type: square">
                                 <li>Our study suggests that vanilla LMs (<20B) (in a zero-shot setting) are systematically unfaithful and consistently fail to reason over the mediator.
                                     In general, our experiments show a large variation in the causal effects of COT in the final answer depending on the tasks. 
                                     Models that are instruction-tuned or trained on the chain of thought during the pre-training phase have a better indirect effect across different reasoning tasks, suggesting that fine-tuning on CoT can make the model more faithful. Interestingly, we observe that there is an inverse scaling for certain tasks. 
@@ -192,28 +191,46 @@
                     <br><br>
                     <br>
                     <figure class="image is-8by6">
-                    <img id="animatedGif" src="static/images/Frodo.png">
+                    <img id="animatedGif" src="static/images/Frodo">
                   </figure>
                 <h2 class="subtitle has-text-centered">
                     <span class="pal">
                         FRODO improves the robustness and generalization ability of the reasoning LM, yielding higher performance on out-of-distribution test sets.
                 </h2>
 
-                    <div class="columns is-centered">
-                        <div class="column has-text-centered">
-                            <figure class="image">
-                                <img src="static/images/example1.png">
-                            </figure>
-                            <figcaption>Overview of Self-Refine: given an initial output (left), FEEDBACK evaluates it
-                                and generates actionable feedback required to correct it (center). The REFINE takes the
-                                feedback into account, and refines the output (right). For example, in the top row, an
-                                initial review with negative sentiment is first transformed into a positive one, then
-                                further refined through feedback. In the bottom row, an initial code snippet is
-                                provided, followed by feedback identifying a more efficient approach, and finally
-                                resulting in an optimized code implementation after applying the suggested improvements.
-                            </figcaption>
+                <div class="columns">
+                        <div class="column has-text-justified">
+                            <h3 class="title is-4">Components</h3>
+                            <ul>
+                                <li><b>Inference Module</b>:
+                                </li>
+                                <br>
+                                <li><b>Reasoner Module</b>: 
+
+                                </li>
+
+                            </ul>
+                            <br><br><br>
+
+                            <h3 class="title is-4">Key Features</h3>
+                            <ul style="list-style-type: square">
+                                <li>
+                                    The FEEDBACK → REFINE → FEEDBACK loop can be applied multiple times.
+                                </li><br>
+                                <li>Self-Refine retains the history of past experiences. This is
+                                    achieved by appending the previous outputs to the prompt continuously. This allows
+                                    the system to learn from
+                                    past mistakes and avoid repeating them
+                                </li><br>
+                                <li>Self-Refine generates actionable feedback. Given the initial output from an LLM, the
+                                    FEEDBACK pinpoints the reasons for the output meeting (or not
+                                    meeting) the requirements. The actionable feedback covers two aspects (i)
+                                    localization of the problem
+                                    (ii) instruction to improve.
+                                </li>
                         </div>
                     </div>
+                    <br><br>
                 </div>
             </div>
         </div>
