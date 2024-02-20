@@ -131,8 +131,7 @@
         <div class="container is-max-desktop">
             <div class="hero-body">
                 <div class="content has-text-justified is-size-4">
-                    
-                    <p>FRODO is a novel method that comprising of two modules. The first module tailors small-sized LMs to generate correct reasoning chains (inference module), while the second module takes the reasoning chains as input and faithfully reasons over them to arrive at the correct answer (reasoning module). To learn to generate correct reasoning chains, we use the DPO algorithm, which enables the model to prefer correct reasoning chains over counterfactual ones with implicit feedback.</p>
+                    <p>FRODO is a novel framework to tailor small-sized LMs to generate correct reasoning steps and robustly reason over these steps. FRODO consists of an inference module that learns to generate correct reasoning steps using an implicit causal reward function and a reasoning module that learns to faithfully reason over these intermediate inferences using a counterfactual and causal preference objective.</p>
                 </div>
                 <figure class="image is-8by6">
                     <img id="animatedGif" src="https://github.com/debjitpaul/frodo.github.io/static/images/Frodo.pdf">
