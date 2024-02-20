@@ -71,7 +71,8 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">Making Reasoning Matter: Measuring and Improving Faithfulness of Chain-of-Thought Reasoning
+                        <h1 class="title is-1 publication-title">Making Reasoning Matter: <hr>
+                            Measuring and Improving Faithfulness of Chain-of-Thought Reasoning
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
@@ -134,7 +135,7 @@
                         Finally, we introduce FRODO, a novel framework to tailor small-sized LMs to generate correct reasoning steps and robustly reason over these steps. FRODO consists of an inference module that learns to generate correct reasoning steps using an implicit causal reward function and a reasoning module that learns to faithfully reason over these intermediate inferences using a counterfactual and causal preference objective.</p>
                 </div>
                 <figure class="image is-8by6">
-                    <img id="animatedGif" src="https://github.com/debjitpaul/frodo.github.io/static/images/figure_1.png">
+                    <img id="animatedGif" src="https://github.com/debjitpaul/frodo.github.io/static/image/figure_1.png">
                   </figure>
                 <h2 class="subtitle has-text-centered">
                     <span class="pal">
@@ -168,6 +169,19 @@
                         <div class="column has-text-justified">
                             <h3 class="title is-4">Reasoning Chain as Mediator</h3>
                             <ul>
+                                <li>In this work, we view the reasoning process as a causal graph, framing the input (reasoning problem) $X$ and the output $Y$ as random variables and the reasoning steps as mediator variable $R$.  
+                                </li>
+                                <br>
+                                <li>We use mediation analysis to interpret the role of reasoning steps as mediators between model inputs and model outputs. Please note that there are two mediator variables, model parameters $M$ and reasoning steps $R$ (see Fig. \ref{fig:causal_graph}(b)). 
+                                However, in this work, we are interested in understanding the indirect effect of $R$ on the output $Y$; hence, we assume model parameters $M$ to be fixed. </li>
+                                <li>Let $X_0$ denote the initial reasoning problem, $R_0$ as the reasoning chain given $X_0$ and $Y_{00}$ denote the potential outcome if the treatment variable and mediator variable are $X_0$ and $R_0$, respectively. Whereas $Y_{01}$ denotes the possible outcome when treatment is set to $X_0$ and $R_1$ is the reasoning chain for an intervened reasoning problem (see Fig.\ref{fig:causal_graph}(d)). 
+                                </li>
+
+                            </ul>
+                            <br><br><br>
+
+                            <h3 class="title is-4">Key Features</h3>
+                            <ul style="list-style-type: square">
                                 <li><b>FEEDBACK</b>: receives the initial output y<sub>0</sub> and provides feedback on
                                     how to enhance it. This feedback is
                                     task-dependent and generally addresses multiple aspects of the input. In the above
@@ -186,12 +200,6 @@
                                     to enhance positivity by substituting “good” with “amazing”.
 
                                 </li>
-
-                            </ul>
-                            <br><br><br>
-
-                            <h3 class="title is-4">Key Features</h3>
-                            <ul style="list-style-type: square">
                                 <li>
                                     The FEEDBACK → REFINE → FEEDBACK loop can be applied multiple times.
                                 </li><br>
