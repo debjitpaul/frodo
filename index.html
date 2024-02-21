@@ -253,7 +253,7 @@
                         GPT-4 has a higher natural indirect effect than ChatGPT, suggesting that it is able to better reason over the reasoning steps for these tasks. 
                         However, for mathematical reasoning (GSM8K), ChatGPT has a better indirect effect. Qualitatively, we find that for mathematical reasoning, when we provide intervened reasoning steps, GPT-4 considers them incorrect and continues to generate correct reasoning steps. 
                         This results in a lower indirect effect score. 
-                        Moreover, GPT-4 exhibits a more pronounced direct effect than Chat- GPT, suggesting that its outputs are more causally sensitive to reasoning problems.
+                        Moreover, GPT-4 exhibits a more pronounced direct effect than Chat-GPT, suggesting that its outputs are more causally sensitive to reasoning problems.
                     </p>
                     </br></br>
                     <!--row1, colored objects-->
@@ -269,7 +269,8 @@
 
                     <div>We consider T5-large (770M) as the inference and reasoning modules. We have the following three observations.
                         First, we present the performance of GPT-3.5 on these tasks. We observe the performance on StrategyQA is much lower than on other tasks, indicating the rationales generated for this task can be unfaithful. 
-                        Hence, for training FRODO, we use only the instances where the answer predicted by GPT-3.5 is correct. Second, for all four datasets, we observe that FRODO outperforms the strong self-rationalization baselines.
+                        Hence, for training FRODO, we use only the instances where the answer predicted by GPT-3.5 is correct. 
+                        Second, for all four datasets, we observe that FRODO outperforms the strong self-rationalization baselines.
                         FRODO, on average, improves the performance by +4.1 and +3 accuracy points compared to the SFT + CoT and Mario (the strongest baseline), respectively, across all four tasks. 
                         Since SFT + CoT and Mario use the same knowledge from GPT-3.5, our results suggest that both our inference and reasoning modules bring substantial performance gains to the model. 
                         Third, it is worth noting that increasing (large to 3B) the model size does not hamper the performance of FRODO. </div>
