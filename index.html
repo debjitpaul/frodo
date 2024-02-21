@@ -267,18 +267,14 @@
 
                     <h2 class="title is-4">FRODO results</h2>
 
-                    <div>We consider T5-large (770M) as the inference and reasoning modules. We have the following three observations.
-                        First, we present the performance of GPT-3.5 on these tasks. We observe the performance on StrategyQA is much lower than on other tasks, indicating the rationales generated for this task can be unfaithful. 
-                        Hence, for training FRODO, we use only the instances where the answer predicted by GPT-3.5 is correct. 
-                        Second, for all four datasets, we observe that FRODO outperforms the strong self-rationalization baselines.
-                        FRODO, on average, improves the performance by +4.1 and +3 accuracy points compared to the SFT + CoT and Mario (the strongest baseline), respectively, across all four tasks. 
-                        Since SFT + CoT and Mario use the same knowledge from GPT-3.5, our results suggest that both our inference and reasoning modules bring substantial performance gains to the model. 
-                        Third, it is worth noting that increasing (large to 3B) the model size does not hamper the performance of FRODO. </div>
+                    <div>
+                        We evaluate FRODO on four reasoning tasks (Quarel, StrategyQA, OpenBookQA, QASC) using multiple model backbones of different scales and demonstrate that \ourmodel achieves an absolute accuracy improvement of 2%~3% over baselines trained with standard supervised fine-tuning or chain-of-thought distilled methods.
+                    </div>
 
                     <!--row2, math reasoning-->
                     <figure class="image is-64by64">
                         <img src="static/image/result_1.png">
-                        <caption><strong><span class="pal"></strong>Performance of small-sized LMs on four different reasoning tasks. The base models are T5-large (770M) and Pink Color: {T5-3B} (3B). We report accuracy (%). </caption>
+                        <caption><strong><span class="pal"></strong> Table 3. <b>Performance of small-sized LMs on four different reasoning tasks. The base models are T5-large (770M) and Pink Color: {T5-3B} (3B). We report accuracy (%).</b> </caption>
                     </figure>
             </div>
         </div>
