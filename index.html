@@ -236,7 +236,8 @@
                         Overall, we observe that LLMs are inconsistent in faithfully performing reasoning over the CoT.
 
                     </p>
-                    </br></br>
+                    </br>
+                </br>
                     <!--row1, colored objects-->
 
                     <figure class="image is-64by64">
@@ -268,13 +269,17 @@
                     <div>
                         We evaluate FRODO on four reasoning tasks (Quarel, StrategyQA, OpenBookQA, QASC) using multiple model backbones of different scales and demonstrate that \ourmodel achieves an absolute accuracy improvement of 2%~3% over baselines trained with standard supervised fine-tuning or chain-of-thought distilled methods.
                         FRODO improves the robustness and generalization ability of the reasoning LM, yielding higher performance on out-of-distribution test sets.
-
                     </div>
 
                     <!--row2, math reasoning-->
                     <figure class="image is-64by64">
                         <img src="static/image/result_1.png">
                         <caption><strong><span class="pal"></strong> Table 3. <b>Performance of small-sized LMs on four different reasoning tasks. The base models are T5-large (770M) and Pink Color: {T5-3B} (3B). We report accuracy (%).</b> </caption>
+                    </figure>
+
+                    <figure class="image is-64by64">
+                        <img src="static/image/frodo_learning.jpeg">
+                        <caption><strong><span class="pal"></strong> FRODO is learning </caption>
                     </figure>
             </div>
         </div>
